@@ -1,9 +1,5 @@
 AWSTemplateFormatVersion: 2010-09-09
 Description: Create an SNS Topic to publish results for AWS Config Rule Access-Key-Rotation
-Parameters:
-  TargetAccounts:
-    Type: String
-    Description: The list of target AWS Account Ids, comma-separated
 Resources:
   SNSTopic:
     Type: 'AWS::SNS::Topic'
@@ -31,10 +27,10 @@ Resources:
               - !Ref 'AWS::AccountId'
               - ':AccessKeyRotationTopic'          
           Principal:
-            AWS: 
-              !Split 
-                - ","
-                - !Ref TargetAccounts
+            AWS: '*'
+          Condition:
+            StringEquals:
+              aws:PrincipalOrgID: o-abcxyz #Organization-ID
       Topics:
       - !Ref SNSTopic
 Outputs:
