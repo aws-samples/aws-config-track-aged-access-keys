@@ -10,7 +10,7 @@ Here is how the process works:
 a.	Resolve the user name from the user resourceId through an API call 
 b.	Publish a customized message to an SNS topic in the master account
 
-Related Blogst: [Managing aged access keys through AWS Config remediations](https://aws.amazon.com/blogs/mt/managing-aged-access-keys-through-aws-config-remediations/)
+Related Blogpost: [Managing aged access keys through AWS Config remediations](https://aws.amazon.com/blogs/mt/managing-aged-access-keys-through-aws-config-remediations/)
 
 ## License
 
